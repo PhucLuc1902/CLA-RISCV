@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Fri Nov 28 15:24:41 2025
+# Process ID         : 35844
+# Current directory  : D:/LAB SOC/LAB 2/lab2/lab2.runs/impl_1
+# Command line       : vivado.exe -log SystemDemo.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source SystemDemo.tcl -notrace
+# Log file           : D:/LAB SOC/LAB 2/lab2/lab2.runs/impl_1/SystemDemo.vdi
+# Journal file       : D:/LAB SOC/LAB 2/lab2/lab2.runs/impl_1\vivado.jou
+# Running On         : LAPTOP-32F8C2TA
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 5 7535HS with Radeon Graphics        
+# CPU Frequency      : 3294 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16312 MB
+# Swap memory        : 10200 MB
+# Total Virtual      : 26513 MB
+# Available Virtual  : 3528 MB
+#-----------------------------------------------------------
+source SystemDemo.tcl -notrace
