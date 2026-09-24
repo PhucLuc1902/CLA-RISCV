@@ -4,9 +4,10 @@
 ## led[7:0]  - lower 4 bits shown on on-board LEDs
 ## ==========================================================
 
-## (No clock used by SystemDemo)
-# set_property -dict { PACKAGE_PIN H16    IOSTANDARD LVCMOS33 } [get_ports { clk }];
-# create_clock -add -name sys_clk_pin -period 8.00 -waveform {0 4} [get_ports { clk }];
+## Clock (needed by SystemDatapath; SystemDemo has no clk port so this
+## constraint is simply ignored when SystemDemo is the active top).
+set_property -dict { PACKAGE_PIN H16    IOSTANDARD LVCMOS33 } [get_ports { clk }];
+create_clock -add -name sys_clk_pin -period 8.00 -waveform {0 4} [get_ports { clk }];
 
 ## ----------------
 ## Switches -> btn

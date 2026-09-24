@@ -1,5 +1,8 @@
-`include "cla.v"
+`timescale 1ns / 1ps
 
+// cla.v is already a source file in this Vivado project, so it must NOT be
+// `include-d here: doing both defines gp1/gp4/gp8/cla twice and Vivado
+// reports "overwriting previous definition" as a CRITICAL WARNING.
 module SystemDemo(
    input wire [6:0] btn,
    // CHANGE: Increase width to 6 bits (led[0] to led[5])
