@@ -5,11 +5,17 @@
  * @param b second 1-bit input
  * @param g whether a and b generate a carry
  * @param p whether a and b would propagate an incoming carry
+ *
+ * p uses XOR rather than OR. Both give the same carry, because the two
+ * only differ when a = b = 1, and there g = 1 already forces the carry
+ * out to 1. XOR is preferred because it is also the sum-without-carry
+ * term, so the adder can reuse it: sum[i] = p[i] ^ c[i]. With OR the
+ * XOR would have to be built a second time, one extra gate per bit.
  */
 module gp1(input wire a, b,
            output wire g, p);
    assign g = a & b;
-   assign p = a | b;
+   assign p = a ^ b;
 endmodule
 
 /**
@@ -228,10 +234,10 @@ module cla
    // final carry-out of the 32-bit adder
    assign c[32] = g8 | (p8 & cin);
 
-   // final sum bits: Si = Ai ⊕ Bi ⊕ Ci
+   // final sum bits: Si = Ai ⊕ Bi ⊕ Ci, and p_bit is already Ai ⊕ Bi
    generate
       for (i = 0; i < 32; i = i + 1) begin : SUM_BITS
-         assign sum[i] = a[i] ^ b[i] ^ c[i];
+         assign sum[i] = p_bit[i] ^ c[i];
       end
    endgenerate
 endmodule
